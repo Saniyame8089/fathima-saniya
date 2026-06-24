@@ -292,7 +292,7 @@ function Nav({
 
 /* ----------------------------- HERO ----------------------------- */
 function Hero({ typing }: { typing: string }) {
-  const stack = ["WordPress", "Wix", "React", "JavaScript", "HTML/CSS", "PHP"];
+  const stack = ["Wix", "React", "JavaScript", "HTML/CSS", "UI"];
   return (
     <section
       id="home"
