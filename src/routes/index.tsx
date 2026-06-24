@@ -74,7 +74,7 @@ const TYPING_PHRASES = [
   "Web Developer",
   "WordPress Developer",
   "Frontend Developer",
-  "Wix Specialist",
+  "Wordpress, Wix Specialist",
 ];
 
 function useTheme() {
@@ -293,7 +293,7 @@ function Nav({
 
 /* ----------------------------- HERO ----------------------------- */
 function Hero({ typing }: { typing: string }) {
-  const stack = ["Wix", "React", "JavaScript", "HTML/CSS", "UI"];
+  const stack = ["Wordpress, Wix", "React", "JavaScript", "HTML/CSS", "UI, Software Development"];
   return (
     <section
       id="home"
@@ -512,7 +512,7 @@ function About() {
               <p className="text-base leading-relaxed text-foreground/90">
                 I am a passionate Web Developer with experience in designing and developing
                 modern, responsive, and user-friendly websites. I specialize in{" "}
-                <span className="font-semibold text-primary">Wix, Shopify</span>, and
+                <span className="font-semibold text-primary">Wordpress, Wix, Shopify</span>, and
                 front-end web solutions, with hands-on experience working on multiple real-time
                 projects.
               </p>
@@ -683,7 +683,7 @@ const SKILL_GROUPS: { title: string; icon: React.ReactNode; items: { name: strin
       { name: "CSS", level: 90 },
       { name: "JavaScript", level: 80 },
       { name: "React", level: 75 },
-      { name: "Wix", level: 92 },
+      { name: "Wordpress, Wix", level: 92 },
       { name: "Python (Basics)", level: 65 },
       { name: "Java (Basics)", level: 60 },
     ],
@@ -829,70 +829,70 @@ const PROJECTS = [
   {
     name: "MobiFix DXB",
     url: "https://mobifixdxb.ae/",
-    tech: ["Wix", "UI", "Responsive"],
+    tech: ["Wordpress, Wix", "UI, Software Development", "Responsive"],
     desc: "Professional service-based website with modern design, responsive pages, and user-friendly navigation.",
     image: mobifixImg,
   },
   {
     name: "The Coorg Holidays",
     url: "https://www.thecoorgholidays.in/",
-    tech: ["Wix", "Web Design"],
+    tech: ["Wordpress, Wix", "Web Design"],
     desc: "Tourism website showcasing travel services with an attractive layout and smooth browsing experience.",
     image: coorgHolidaysImg,
   },
   {
     name: "Boomy AE",
     url: "https://boomy.ae/",
-    tech: ["Wix", "UI"],
+    tech: ["Wordpress, Wix", "UI, Software Development"],
     desc: "Modern business website focusing on clean design, responsiveness, and functionality.",
     image: boomyImg,
   },
   {
     name: "Coorg Green View Homestay",
     url: "https://www.coorggreenviewhomestay.in/",
-    tech: ["Wix"],
+    tech: ["Wordpress, Wix"],
     desc: "Hospitality website displaying accommodations, services, and customer information.",
     image: coorgGreenViewImg,
   },
   {
     name: "Coorg Dream Land Stay",
     url: "https://coorgdreamlandstay.com/",
-    tech: ["Wix"],
+    tech: ["Wordpress, Wix"],
     desc: "Responsive homestay website with modern visuals and mobile-friendly layouts.",
     image: coorgDreamLandImg,
   },
   {
     name: "FuturBrix",
     url: "https://futurbrix.com/",
-    tech: ["Wix", "UI", "Frontend"],
+    tech: ["Wordpress, Wix", "UI, Software Development", "Frontend"],
     desc: "Corporate website focusing on branding and a clean user experience.",
     image: futurbrixImg,
   },
   {
     name: "Spice Hut Coorg",
     url: "https://spiceshutcoorg.com/",
-    tech: ["Wix"],
+    tech: ["Wordpress, Wix"],
     desc: "Responsive business website with attractive visuals and optimized layouts.",
     image: spicesHutImg,
   },
   {
     name: "HIQ Enterprise",
     url: "https://hiqenterprise.in/",
-    tech: ["Wix", "UI", "HTML", "CSS", "Responsive Design"],
+    tech: ["Wordpress, Wix", "UI, Software Development", "HTML", "CSS", "Responsive Design"],
     desc: "Developed a professional business website with a clean responsive layout, organized content structure, smooth navigation, and user-friendly interface focused on delivering a modern digital experience.",
     image: hiqImg,
   },
   {
     name: "Just Stay Home",
     url: "https://juststayhome.in/",
-    tech: ["Wix", "Website Design", "Responsive Development"],
+    tech: ["Wordpress, Wix", "Website Design", "Responsive Development"],
     desc: "Designed and developed a modern website with an attractive interface, mobile-friendly pages, smooth user experience, and optimized layouts for better accessibility across devices.",
     image: justStayHomeImg,
   },
   {
     name: "Misty River Coorg",
     url: "https://www.mistyrivercoorg.com/",
-    tech: ["Wix", "UI", "HTML", "CSS", "Responsive Website Development"],
+    tech: ["Wordpress, Wix", "UI, Software Development", "HTML", "CSS", "Responsive Website Development"],
     desc: "Created an elegant hospitality website showcasing property details and services with beautiful layouts, responsive design, simple navigation, and customer-focused user experience.",
     image: mistyRiverImg,
   },
