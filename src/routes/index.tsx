@@ -142,11 +142,13 @@ function Portfolio() {
   const typing = useTyping(TYPING_PHRASES);
   const [navOpen, setNavOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const [scrolled, setScrolled] = useState(false);
   useReveal();
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY + 140;
+      setScrolled(window.scrollY > 12);
       for (const n of NAV) {
         const el = document.getElementById(n.id);
         if (el && el.offsetTop <= y && el.offsetTop + el.offsetHeight > y) {
@@ -162,7 +164,7 @@ function Portfolio() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Toaster richColors position="top-right" />
-      <Nav active={active} dark={dark} toggle={toggle} open={navOpen} setOpen={setNavOpen} />
+      <Nav active={active} dark={dark} toggle={toggle} open={navOpen} setOpen={setNavOpen} scrolled={scrolled} />
       <Hero typing={typing} />
       <About />
       <Experience />
