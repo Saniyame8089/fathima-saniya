@@ -883,14 +883,20 @@ function Projects() {
               rel="noreferrer"
               className="reveal group relative overflow-hidden rounded-2xl border border-border bg-card shadow-card transition hover:translate-y-[-4px] hover:border-primary hover:shadow-glow"
             >
-              <div className="relative h-44 overflow-hidden bg-gradient-primary">
-                <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.15)_1px,transparent_1px)] [background-size:24px_24px]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="rounded-lg bg-background/90 px-4 py-2 font-mono text-xs text-foreground shadow-card">
-                    {new URL(p.url).hostname}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="rounded-full bg-background/90 px-4 py-2 font-mono text-xs text-foreground shadow-card backdrop-blur-sm">
+                    Visit Website
                   </div>
                 </div>
-                <div className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-lg bg-background/90 text-foreground opacity-0 transition group-hover:opacity-100">
+                <div className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-background/90 text-foreground opacity-0 shadow-card backdrop-blur-sm transition duration-300 group-hover:opacity-100">
                   <ExternalLink size={16} />
                 </div>
               </div>
