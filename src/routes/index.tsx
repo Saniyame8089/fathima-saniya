@@ -26,6 +26,16 @@ import {
 } from "lucide-react";
 import { toast, Toaster } from "sonner";
 import saniyaPhoto from "@/assets/saniya-profile.jpg";
+import mobifixImg from "@/assets/projects/mobifix.png";
+import coorgHolidaysImg from "@/assets/projects/coorg-holidays.png";
+import boomyImg from "@/assets/projects/boomy.png";
+import coorgGreenViewImg from "@/assets/projects/coorg-green-view.png";
+import coorgDreamLandImg from "@/assets/projects/coorg-dream-land.png";
+import futurbrixImg from "@/assets/projects/futurbrix.png";
+import spicesHutImg from "@/assets/projects/spices-hut.png";
+import hiqImg from "@/assets/projects/hiq.png";
+import justStayHomeImg from "@/assets/projects/just-stay-home.png";
+import mistyRiverImg from "@/assets/projects/misty-river.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -788,60 +798,70 @@ const PROJECTS = [
     url: "https://mobifixdxb.ae/",
     tech: ["WordPress", "PHP", "Responsive"],
     desc: "Professional service-based website with modern design, responsive pages, and user-friendly navigation.",
+    image: mobifixImg,
   },
   {
     name: "The Coorg Holidays",
     url: "https://www.thecoorgholidays.in/",
     tech: ["WordPress", "Web Design"],
     desc: "Tourism website showcasing travel services with an attractive layout and smooth browsing experience.",
+    image: coorgHolidaysImg,
   },
   {
     name: "Boomy AE",
     url: "https://boomy.ae/",
     tech: ["WordPress", "PHP", "UI"],
     desc: "Modern business website focusing on clean design, responsiveness, and functionality.",
+    image: boomyImg,
   },
   {
     name: "Coorg Green View Homestay",
     url: "https://www.coorggreenviewhomestay.in/",
     tech: ["WordPress"],
     desc: "Hospitality website displaying accommodations, services, and customer information.",
+    image: coorgGreenViewImg,
   },
   {
     name: "Coorg Dream Land Stay",
     url: "https://coorgdreamlandstay.com/",
     tech: ["WordPress", "Wix"],
     desc: "Responsive homestay website with modern visuals and mobile-friendly layouts.",
+    image: coorgDreamLandImg,
   },
   {
     name: "FuturBrix",
     url: "https://futurbrix.com/",
     tech: ["WordPress", "PHP", "Frontend"],
     desc: "Corporate website focusing on branding and a clean user experience.",
+    image: futurbrixImg,
   },
   {
     name: "Spice Hut Coorg",
     url: "https://spiceshutcoorg.com/",
     tech: ["WordPress", "Wix"],
     desc: "Responsive business website with attractive visuals and optimized layouts.",
+    image: spicesHutImg,
   },
   {
     name: "HIQ Enterprise",
     url: "https://hiqenterprise.in/",
     tech: ["WordPress", "PHP", "HTML", "CSS", "Responsive Design"],
     desc: "Developed a professional business website with a clean responsive layout, organized content structure, smooth navigation, and user-friendly interface focused on delivering a modern digital experience.",
+    image: hiqImg,
   },
   {
     name: "Just Stay Home",
     url: "https://juststayhome.in/",
     tech: ["WordPress", "Wix", "Website Design", "Responsive Development"],
     desc: "Designed and developed a modern website with an attractive interface, mobile-friendly pages, smooth user experience, and optimized layouts for better accessibility across devices.",
+    image: justStayHomeImg,
   },
   {
     name: "Misty River Coorg",
     url: "https://www.mistyrivercoorg.com/",
     tech: ["WordPress", "PHP", "HTML", "CSS", "Responsive Website Development"],
     desc: "Created an elegant hospitality website showcasing property details and services with beautiful layouts, responsive design, simple navigation, and customer-focused user experience.",
+    image: mistyRiverImg,
   },
 ];
 
@@ -863,14 +883,20 @@ function Projects() {
               rel="noreferrer"
               className="reveal group relative overflow-hidden rounded-2xl border border-border bg-card shadow-card transition hover:translate-y-[-4px] hover:border-primary hover:shadow-glow"
             >
-              <div className="relative h-44 overflow-hidden bg-gradient-primary">
-                <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.15)_1px,transparent_1px)] [background-size:24px_24px]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="rounded-lg bg-background/90 px-4 py-2 font-mono text-xs text-foreground shadow-card">
-                    {new URL(p.url).hostname}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="rounded-full bg-background/90 px-4 py-2 font-mono text-xs text-foreground shadow-card backdrop-blur-sm">
+                    Visit Website
                   </div>
                 </div>
-                <div className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-lg bg-background/90 text-foreground opacity-0 transition group-hover:opacity-100">
+                <div className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-background/90 text-foreground opacity-0 shadow-card backdrop-blur-sm transition duration-300 group-hover:opacity-100">
                   <ExternalLink size={16} />
                 </div>
               </div>
