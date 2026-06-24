@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import emailjs from "emailjs-com";
 import {
   Github,
   Linkedin,
@@ -963,11 +964,31 @@ function Contact() {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => {
-      setSending(false);
-      toast.success("Message sent! I'll get back to you soon.");
-      (e.target as HTMLFormElement).reset();
-    }, 900);
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    emailjs
+      .send(
+        "service_1utghbm",
+        "template_oslm10a",
+        {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
+        },
+        "CJsYqROtJxQvp1H5g"
+      )
+      .then(() => {
+        setSending(false);
+        toast.success("Message sent! I'll get back to you soon.");
+        form.reset();
+      })
+      .catch(() => {
+        setSending(false);
+        toast.error("Something went wrong. Please try again later.");
+      });
   };
 
   return (
