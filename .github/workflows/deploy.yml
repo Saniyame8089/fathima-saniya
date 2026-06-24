@@ -27,13 +27,10 @@ jobs:
       - name: Build
         run: bun run build
 
-      - name: Check files
-        run: ls -la
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: dist
 
   deploy:
     needs: build
