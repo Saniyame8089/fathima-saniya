@@ -371,7 +371,7 @@ function Hero({ typing }: { typing: string }) {
                   <Sparkles size={16} />
                 </span>
                 <div>
-                  <p className="font-display text-lg font-bold leading-none">14+</p>
+                  <p className="font-display text-lg font-bold leading-none">17+</p>
                   <p className="text-[10px] text-muted-foreground">Websites built</p>
                 </div>
               </div>
@@ -478,7 +478,7 @@ function About() {
                 technologies, improve my skills, and build impactful web solutions.
               </p>
               <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-                <Stat value="14+" label="Projects" />
+                <Stat value="17+" label="Projects" />
                 <Stat value="4+" label="Certifications" />
                 <Stat value="100%" label="Dedication" />
               </div>
@@ -491,10 +491,14 @@ function About() {
             <ol className="relative space-y-5 border-l-2 border-border pl-5">
               {EDUCATION.map((e) => (
                 <li key={e.degree} className="relative">
-                  <span className="absolute -left-[27px] top-1.5 h-3 w-3 rounded-full bg-gradient-primary shadow-glow" />
-                  <p className="font-mono text-xs text-primary">{e.period}</p>
-                  <p className="mt-1 font-semibold">{e.degree}</p>
-                  <p className="text-sm text-muted-foreground">{e.school}</p>
+                  <span className="absolute -left-[27px] top-3 h-3 w-3 rounded-full bg-gradient-primary shadow-glow" />
+                  <div className="rounded-xl border border-border/40 bg-card/60 p-4 shadow-card backdrop-blur transition hover:border-primary/30 hover:shadow-glow">
+                    <span className="inline-block rounded-full bg-primary/10 px-2.5 py-0.5 font-mono text-[10px] text-primary">
+                      {e.period}
+                    </span>
+                    <p className="mt-2 font-semibold">{e.degree}</p>
+                    <p className="text-sm text-muted-foreground">{e.school}</p>
+                  </div>
                 </li>
               ))}
             </ol>
@@ -521,7 +525,7 @@ const EXPERIENCE = [
     company: "Techshaf",
     period: "May 2025 – May 2026",
     points: [
-      "Built 14+ complete websites end-to-end",
+      "Built 17+ complete websites end-to-end",
       "Developed responsive WordPress and Wix websites",
       "Created functional and visually appealing web solutions",
       "Improved website layouts, usability, and user experience",
@@ -820,6 +824,24 @@ const PROJECTS = [
     url: "https://spiceshutcoorg.com/",
     tech: ["WordPress", "Wix"],
     desc: "Responsive business website with attractive visuals and optimized layouts.",
+  },
+  {
+    name: "HIQ Enterprise",
+    url: "https://hiqenterprise.in/",
+    tech: ["WordPress", "PHP", "HTML", "CSS", "Responsive Design"],
+    desc: "Developed a professional business website with a clean responsive layout, organized content structure, smooth navigation, and user-friendly interface focused on delivering a modern digital experience.",
+  },
+  {
+    name: "Just Stay Home",
+    url: "https://juststayhome.in/",
+    tech: ["WordPress", "Wix", "Website Design", "Responsive Development"],
+    desc: "Designed and developed a modern website with an attractive interface, mobile-friendly pages, smooth user experience, and optimized layouts for better accessibility across devices.",
+  },
+  {
+    name: "Misty River Coorg",
+    url: "https://www.mistyrivercoorg.com/",
+    tech: ["WordPress", "PHP", "HTML", "CSS", "Responsive Website Development"],
+    desc: "Created an elegant hospitality website showcasing property details and services with beautiful layouts, responsive design, simple navigation, and customer-focused user experience.",
   },
 ];
 
