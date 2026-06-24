@@ -25,7 +25,7 @@ import {
   Users,
 } from "lucide-react";
 import { toast, Toaster } from "sonner";
-import saniyaPhoto from "@/assets/saniya.jpg";
+import saniyaPhoto from "@/assets/saniya-profile.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -356,9 +356,9 @@ function Hero({ typing }: { typing: string }) {
                 <img
                   src={saniyaPhoto}
                   alt="Fathima Saniya M E — Web Developer"
-                  width={1024}
-                  height={1536}
-                  className="aspect-[4/5] w-full object-cover"
+                  width={1254}
+                  height={1254}
+                  className="aspect-square w-full object-cover"
                 />
               </div>
             </div>
@@ -376,24 +376,6 @@ function Hero({ typing }: { typing: string }) {
               </div>
             </div>
 
-            {/* Code window snippet */}
-            <div className="glass absolute -right-3 top-1/3 hidden w-56 rounded-2xl p-3 shadow-card sm:block">
-              <div className="mb-2 flex items-center gap-1.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-destructive/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-accent" />
-                <span className="h-2.5 w-2.5 rounded-full bg-primary" />
-                <span className="ml-2 font-mono text-[10px] text-muted-foreground">
-                  saniya.tsx
-                </span>
-              </div>
-              <pre className="font-mono text-[10.5px] leading-relaxed text-muted-foreground">
-{`const dev = {
-  name: "Saniya",
-  loves: `}<span className="text-primary">"clean UI"</span>{`,
-  ships: `}<span className="text-accent">true</span>{`,
-}`}
-              </pre>
-            </div>
 
             {/* Bottom-right badge: specialty */}
             <div className="glass absolute -bottom-4 right-2 rounded-2xl px-4 py-3 shadow-card sm:right-6">
