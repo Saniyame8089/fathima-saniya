@@ -213,10 +213,11 @@ function Nav({
               {dark ? <Sun size={16} /> : <Moon size={16} />}
             </button>
             <a
-              href="#contact"
-              className="hidden rounded-lg bg-gradient-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90 md:inline-flex"
+              href="/resume.pdf"
+              download
+              className="hidden items-center gap-2 rounded-full bg-gradient-rose-gold px-4 py-2 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90 md:inline-flex"
             >
-              Hire Me
+              <Download size={14} /> Resume
             </a>
             <button
               onClick={() => setOpen(!open)}
@@ -299,14 +300,14 @@ function Hero({ typing }: { typing: string }) {
             <a
               href="/resume.pdf"
               download
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-gradient-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:translate-y-[-2px]"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-rose-gold px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:translate-y-[-2px]"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               <Download size={16} /> Download Resume
             </a>
             <a
               href="#portfolio"
-              className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/60 px-5 py-3 text-sm font-semibold backdrop-blur transition hover:border-primary hover:text-primary"
+              className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-card/60 px-6 py-3 text-sm font-semibold backdrop-blur transition hover:border-primary hover:text-primary"
             >
               View Projects{" "}
               <ArrowRight size={16} className="transition group-hover:translate-x-1" />
@@ -351,7 +352,7 @@ function Hero({ typing }: { typing: string }) {
             <div className="absolute -inset-6 rounded-full border border-dashed border-primary/30" />
             <div className="absolute -inset-12 rounded-full border border-dashed border-accent/20" />
 
-            <div className="relative rounded-[2rem] bg-gradient-primary p-[2px] shadow-glow">
+            <div className="relative rounded-[2rem] bg-gradient-rose-gold p-[2px] shadow-glow">
               <div className="overflow-hidden rounded-[1.85rem] bg-card">
                 <img
                   src={saniyaPhoto}
