@@ -518,7 +518,7 @@ const EXPERIENCE = [
   {
     role: "Web Developer",
     company: "Techshaf",
-    period: "Oct 2024 – May 2025",
+    period: "May 2025 – May 2026",
     points: [
       "Built 14+ complete websites end-to-end",
       "Developed responsive WordPress and Wix websites",
