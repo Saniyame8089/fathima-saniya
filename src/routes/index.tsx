@@ -184,32 +184,51 @@ function Nav({
   toggle,
   open,
   setOpen,
+  scrolled,
 }: {
   active: string;
   dark: boolean;
   toggle: () => void;
   open: boolean;
   setOpen: (v: boolean) => void;
+  scrolled: boolean;
 }) {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-auto mt-3 max-w-6xl px-4">
-        <div className="glass flex items-center justify-between rounded-2xl px-4 py-3 shadow-card">
-          <a href="#home" className="flex items-center gap-2 font-display text-lg font-bold">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-primary text-primary-foreground shadow-glow">
-              S
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "pt-2" : "pt-3"
+      }`}
+    >
+      <div className="mx-auto max-w-6xl px-4">
+        <div
+          className={`glass flex items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-500 ${
+            scrolled
+              ? "border-border/60 bg-background/70 shadow-elegant backdrop-blur-xl"
+              : "shadow-card"
+          }`}
+        >
+          <a
+            href="#home"
+            className="group flex items-center gap-2.5 font-display text-lg font-bold"
+          >
+            <span className="relative grid h-9 w-9 place-items-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3">
+              <span className="font-display text-base tracking-tight">S</span>
+              <span className="absolute -inset-0.5 -z-10 rounded-xl bg-gradient-rose-gold opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-60" />
             </span>
-            <span className="text-gradient">Saniya.dev</span>
+            <span className="flex items-baseline">
+              <span className="text-gradient tracking-tight">Saniya</span>
+              <span className="text-muted-foreground/70 font-medium">.dev</span>
+            </span>
           </a>
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden items-center gap-1 rounded-full border border-border/40 bg-background/40 px-1.5 py-1 backdrop-blur md:flex">
             {NAV.map((n) => (
               <a
                 key={n.id}
                 href={`#${n.id}`}
-                className={`rounded-lg px-3 py-1.5 text-sm font-medium transition ${
+                className={`relative rounded-full px-3.5 py-1.5 text-sm font-medium transition-all duration-300 ${
                   active === n.id
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "bg-gradient-rose-gold text-primary-foreground shadow-glow"
+                    : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
                 }`}
               >
                 {n.label}
@@ -220,20 +239,21 @@ function Nav({
             <button
               onClick={toggle}
               aria-label="Toggle theme"
-              className="grid h-9 w-9 place-items-center rounded-lg border border-border bg-background/50 transition hover:bg-primary/10 hover:text-primary"
+              className="grid h-9 w-9 place-items-center rounded-full border border-border/60 bg-background/50 transition-all duration-300 hover:scale-105 hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
             >
               {dark ? <Sun size={16} /> : <Moon size={16} />}
             </button>
             <a
-              href="/resume.pdf"
-              download
-              className="hidden items-center gap-2 rounded-full bg-gradient-rose-gold px-4 py-2 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90 md:inline-flex"
+              href="#contact"
+              className="group relative hidden items-center gap-2 overflow-hidden rounded-full bg-gradient-rose-gold px-5 py-2 text-sm font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-elegant md:inline-flex"
             >
-              <Download size={14} /> Resume
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <Sparkles size={14} className="relative" />
+              <span className="relative">Hire Me</span>
             </a>
             <button
               onClick={() => setOpen(!open)}
-              className="grid h-9 w-9 place-items-center rounded-lg border border-border md:hidden"
+              className="grid h-9 w-9 place-items-center rounded-full border border-border/60 bg-background/50 transition hover:border-primary/40 hover:bg-primary/10 hover:text-primary md:hidden"
               aria-label="Menu"
             >
               {open ? <X size={16} /> : <Menu size={16} />}
@@ -241,17 +261,28 @@ function Nav({
           </div>
         </div>
         {open && (
-          <div className="glass mt-2 flex flex-col gap-1 rounded-2xl p-3 md:hidden">
+          <div className="glass mt-2 flex flex-col gap-1 rounded-2xl p-3 shadow-elegant animate-fade-in md:hidden">
             {NAV.map((n) => (
               <a
                 key={n.id}
                 href={`#${n.id}`}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-primary/10 hover:text-primary"
+                className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
+                  active === n.id
+                    ? "bg-primary/10 text-primary"
+                    : "hover:bg-primary/10 hover:text-primary"
+                }`}
               >
                 {n.label}
               </a>
             ))}
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-rose-gold px-4 py-2 text-sm font-semibold text-primary-foreground shadow-glow"
+            >
+              <Sparkles size={14} /> Hire Me
+            </a>
           </div>
         )}
       </div>
