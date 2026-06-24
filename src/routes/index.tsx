@@ -381,7 +381,7 @@ function Hero({ typing }: { typing: string }) {
                   <Sparkles size={16} />
                 </span>
                 <div>
-                  <p className="font-display text-lg font-bold leading-none">17+</p>
+                  <p className="font-display text-lg font-bold leading-none">14+</p>
                   <p className="text-[10px] text-muted-foreground">Websites built</p>
                 </div>
               </div>
