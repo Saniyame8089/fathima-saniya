@@ -913,7 +913,7 @@ function Projects() {
               key={p.name}
               href={p.url}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="reveal group relative overflow-hidden rounded-2xl border border-border bg-card shadow-card transition hover:translate-y-[-4px] hover:border-primary hover:shadow-glow"
             >
               <div className="relative h-48 overflow-hidden">
