@@ -381,7 +381,7 @@ function Hero({ typing }: { typing: string }) {
                   <Sparkles size={16} />
                 </span>
                 <div>
-                  <p className="font-display text-lg font-bold leading-none">17+</p>
+                  <p className="font-display text-lg font-bold leading-none">14+</p>
                   <p className="text-[10px] text-muted-foreground">Websites built</p>
                 </div>
               </div>
@@ -488,7 +488,7 @@ function About() {
                 technologies, improve my skills, and build impactful web solutions.
               </p>
               <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-                <Stat value="17+" label="Projects" />
+                <Stat value="14+" label="Projects" />
                 <Stat value="4+" label="Certifications" />
                 <Stat value="100%" label="Dedication" />
               </div>
@@ -535,7 +535,7 @@ const EXPERIENCE = [
     company: "Techshaf",
     period: "May 2025 – May 2026",
     points: [
-      "Built 17+ complete websites end-to-end",
+      "Built 14+ complete websites end-to-end",
       "Developed responsive WordPress and Wix websites",
       "Created functional and visually appealing web solutions",
       "Improved website layouts, usability, and user experience",
