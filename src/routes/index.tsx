@@ -535,7 +535,7 @@ const EXPERIENCE = [
     company: "Techshaf",
     period: "May 2025 – May 2026",
     points: [
-      "Built 17+ complete websites end-to-end",
+      "Built 14+ complete websites end-to-end",
       "Developed responsive WordPress and Wix websites",
       "Created functional and visually appealing web solutions",
       "Improved website layouts, usability, and user experience",
