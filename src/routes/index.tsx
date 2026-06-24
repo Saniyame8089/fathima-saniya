@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { toast, Toaster } from "sonner";
 import saniyaPhoto from "@/assets/saniya-profile.jpg";
+import resumeAsset from "@/assets/FATHIMA_SANIYA_Resume.pdf.asset.json";
 import mobifixImg from "@/assets/projects/mobifix.png";
 import coorgHolidaysImg from "@/assets/projects/coorg-holidays.png";
 import boomyImg from "@/assets/projects/boomy.png";
@@ -341,8 +342,8 @@ function Hero({ typing }: { typing: string }) {
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="/resume.pdf"
-              download
+              href={resumeAsset.url}
+              download="FATHIMA_SANIYA_Resume.pdf"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-rose-gold px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:translate-y-[-2px]"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
@@ -362,7 +363,7 @@ function Hero({ typing }: { typing: string }) {
             <a
               href="https://github.com/Saniyame8089"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="transition hover:-translate-y-0.5 hover:text-primary"
               aria-label="GitHub"
             >
@@ -371,7 +372,7 @@ function Hero({ typing }: { typing: string }) {
             <a
               href="https://www.linkedin.com/in/fathima-saniya-m-e/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="transition hover:-translate-y-0.5 hover:text-primary"
               aria-label="LinkedIn"
             >
@@ -912,7 +913,7 @@ function Projects() {
               key={p.name}
               href={p.url}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="reveal group relative overflow-hidden rounded-2xl border border-border bg-card shadow-card transition hover:translate-y-[-4px] hover:border-primary hover:shadow-glow"
             >
               <div className="relative h-48 overflow-hidden">
@@ -1078,7 +1079,7 @@ function ContactCard({
     <a
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
-      rel="noreferrer"
+      rel="noopener noreferrer"
       className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-card transition hover:translate-y-[-2px] hover:border-primary hover:shadow-glow"
     >
       <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-primary text-primary-foreground">
@@ -1099,13 +1100,13 @@ function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 text-sm text-muted-foreground sm:flex-row">
         <p>© {new Date().getFullYear()} Fathima Saniya M E. Crafted with care.</p>
         <div className="flex items-center gap-4">
-          <a href="https://github.com/Saniyame8089" target="_blank" rel="noreferrer" className="hover:text-primary">
+          <a href="https://github.com/Saniyame8089" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
             <Github size={16} />
           </a>
           <a
             href="https://www.linkedin.com/in/fathima-saniya-m-e/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="hover:text-primary"
           >
             <Linkedin size={16} />
