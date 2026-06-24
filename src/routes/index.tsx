@@ -192,19 +192,19 @@ function Nav({
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto mt-3 max-w-6xl px-4">
-        <div className="glass flex items-center justify-between rounded-2xl px-4 py-3 shadow-card">
-          <a href="#home" className="flex items-center gap-2 font-display text-lg font-bold">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-primary text-primary-foreground shadow-glow">
+        <div className="glass flex items-center justify-between rounded-2xl border border-border/60 px-5 py-3 shadow-card backdrop-blur-xl">
+          <a href="#home" className="flex items-center gap-2.5 font-display text-lg font-bold tracking-tight">
+            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-rose-gold text-primary-foreground shadow-glow">
               S
             </span>
-            <span className="text-gradient">Saniya.dev</span>
+            <span className="text-gradient hidden sm:inline">Saniya.dev</span>
           </a>
           <nav className="hidden items-center gap-1 md:flex">
             {NAV.map((n) => (
               <a
                 key={n.id}
                 href={`#${n.id}`}
-                className={`rounded-lg px-3 py-1.5 text-sm font-medium transition ${
+                className={`rounded-lg px-3.5 py-1.5 text-sm font-medium transition ${
                   active === n.id
                     ? "bg-primary/10 text-primary"
                     : "text-muted-foreground hover:text-foreground"
@@ -214,24 +214,23 @@ function Nav({
               </a>
             ))}
           </nav>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             <button
               onClick={toggle}
               aria-label="Toggle theme"
-              className="grid h-9 w-9 place-items-center rounded-lg border border-border bg-background/50 transition hover:bg-primary/10 hover:text-primary"
+              className="grid h-9 w-9 place-items-center rounded-lg border border-border/60 bg-background/50 transition hover:bg-primary/10 hover:text-primary"
             >
               {dark ? <Sun size={16} /> : <Moon size={16} />}
             </button>
             <a
-              href="/resume.pdf"
-              download
-              className="hidden items-center gap-2 rounded-full bg-gradient-rose-gold px-4 py-2 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90 md:inline-flex"
+              href="#contact"
+              className="hidden items-center gap-2 rounded-full bg-gradient-rose-gold px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90 md:inline-flex"
             >
-              <Download size={14} /> Resume
+              <Briefcase size={14} /> Hire Me
             </a>
             <button
               onClick={() => setOpen(!open)}
-              className="grid h-9 w-9 place-items-center rounded-lg border border-border md:hidden"
+              className="grid h-9 w-9 place-items-center rounded-lg border border-border/60 md:hidden"
               aria-label="Menu"
             >
               {open ? <X size={16} /> : <Menu size={16} />}
@@ -239,7 +238,7 @@ function Nav({
           </div>
         </div>
         {open && (
-          <div className="glass mt-2 flex flex-col gap-1 rounded-2xl p-3 md:hidden">
+          <div className="glass mt-2 flex flex-col gap-1 rounded-2xl border border-border/40 p-3 shadow-card md:hidden">
             {NAV.map((n) => (
               <a
                 key={n.id}
@@ -250,6 +249,13 @@ function Nav({
                 {n.label}
               </a>
             ))}
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="mt-1 flex items-center justify-center gap-2 rounded-full bg-gradient-rose-gold px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow"
+            >
+              <Briefcase size={14} /> Hire Me
+            </a>
           </div>
         )}
       </div>
