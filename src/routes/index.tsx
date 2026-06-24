@@ -248,56 +248,78 @@ function Nav({
 
 /* ----------------------------- HERO ----------------------------- */
 function Hero({ typing }: { typing: string }) {
+  const stack = ["WordPress", "Wix", "React", "JavaScript", "HTML/CSS", "PHP"];
   return (
     <section
       id="home"
-      className="bg-hero relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28"
+      className="bg-hero relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28"
     >
+      <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(to_right,color-mix(in_oklab,var(--color-foreground)_6%,transparent)_1px,transparent_1px),linear-gradient(to_bottom,color-mix(in_oklab,var(--color-foreground)_6%,transparent)_1px,transparent_1px)] [background-size:42px_42px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]" />
       <FloatingBlobs />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 md:grid-cols-2">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-4 md:grid-cols-[1.1fr_1fr]">
         <div className="reveal">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-accent" /> Available for new projects
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            </span>
+            Available for freelance &amp; full-time roles
           </div>
-          <h1 className="font-display text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
-            Hello, I'm <br />
+          <p className="mb-3 font-mono text-sm text-muted-foreground">
+            <span className="text-accent">$</span> whoami
+          </p>
+          <h1 className="font-display text-4xl font-bold leading-[1.05] sm:text-5xl md:text-[3.75rem]">
+            <span className="block text-foreground/80">Hi, I'm</span>
             <span className="text-gradient">Fathima Saniya</span>
-            <span className="block text-foreground">M E</span>
+            <span className="block text-foreground">M E.</span>
           </h1>
-          <p className="mt-5 font-mono text-lg text-primary">
-            <span className="caret">{typing}</span>
+          <p className="mt-5 flex flex-wrap items-baseline gap-2 font-mono text-base text-muted-foreground sm:text-lg">
+            <span className="text-primary">{">"}</span>
+            <span className="text-foreground">I build </span>
+            <span className="rounded-md bg-primary/10 px-2 py-0.5 text-primary caret">
+              {typing}
+            </span>
           </p>
-          <p className="mt-5 max-w-lg text-base text-muted-foreground sm:text-lg">
-            Passionate Web Developer creating modern, responsive, and user-friendly digital
-            experiences with WordPress, Wix, and modern frontend technologies.
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Crafting <span className="text-foreground">modern, responsive</span> and
+            user-friendly digital experiences with WordPress, Wix and modern frontend
+            technologies — turning ideas into pixel-perfect websites.
           </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {stack.map((s) => (
+              <span
+                key={s}
+                className="rounded-full border border-border bg-card/60 px-3 py-1 font-mono text-xs text-muted-foreground backdrop-blur transition hover:border-primary hover:text-primary"
+              >
+                {s}
+              </span>
+            ))}
+          </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="/resume.pdf"
               download
-              className="group inline-flex items-center gap-2 rounded-xl bg-gradient-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:translate-y-[-2px]"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-gradient-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:translate-y-[-2px]"
             >
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               <Download size={16} /> Download Resume
             </a>
             <a
               href="#portfolio"
               className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/60 px-5 py-3 text-sm font-semibold backdrop-blur transition hover:border-primary hover:text-primary"
             >
-              View Projects <ArrowRight size={16} />
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/60 px-5 py-3 text-sm font-semibold backdrop-blur transition hover:border-accent hover:text-accent"
-            >
-              Contact Me
+              View Projects{" "}
+              <ArrowRight size={16} className="transition group-hover:translate-x-1" />
             </a>
           </div>
           <div className="mt-10 flex items-center gap-5 text-muted-foreground">
+            <span className="font-mono text-xs uppercase tracking-widest">Find me</span>
+            <span className="h-px flex-1 max-w-12 bg-border" />
             <a
               href="https://github.com/Saniyame8089"
               target="_blank"
               rel="noreferrer"
-              className="transition hover:text-primary"
+              className="transition hover:-translate-y-0.5 hover:text-primary"
               aria-label="GitHub"
             >
               <Github size={20} />
@@ -306,14 +328,14 @@ function Hero({ typing }: { typing: string }) {
               href="https://www.linkedin.com/in/fathima-saniya-m-e/"
               target="_blank"
               rel="noreferrer"
-              className="transition hover:text-primary"
+              className="transition hover:-translate-y-0.5 hover:text-primary"
               aria-label="LinkedIn"
             >
               <Linkedin size={20} />
             </a>
             <a
               href="mailto:saniyamefathima@gmail.com"
-              className="transition hover:text-primary"
+              className="transition hover:-translate-y-0.5 hover:text-primary"
               aria-label="Email"
             >
               <Mail size={20} />
@@ -322,30 +344,84 @@ function Hero({ typing }: { typing: string }) {
         </div>
 
         <div className="reveal relative mx-auto w-full max-w-md">
-          <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-primary opacity-30 blur-3xl" />
+          <div className="absolute -inset-10 rounded-[3rem] bg-gradient-primary opacity-30 blur-3xl" />
+          <div className="absolute inset-0 -z-10 rounded-full bg-gradient-accent opacity-20 blur-2xl" />
           <div className="relative animate-float">
-            <div className="rounded-[2rem] bg-gradient-primary p-1 shadow-glow">
-              <div className="overflow-hidden rounded-[1.75rem] bg-card">
+            {/* Decorative orbit rings */}
+            <div className="absolute -inset-6 rounded-full border border-dashed border-primary/30" />
+            <div className="absolute -inset-12 rounded-full border border-dashed border-accent/20" />
+
+            <div className="relative rounded-[2rem] bg-gradient-primary p-[2px] shadow-glow">
+              <div className="overflow-hidden rounded-[1.85rem] bg-card">
                 <img
                   src={saniyaPhoto}
-                  alt="Fathima Saniya M E"
+                  alt="Fathima Saniya M E — Web Developer"
                   width={1024}
                   height={1536}
-                  className="aspect-[3/4] w-full object-cover"
+                  className="aspect-[4/5] w-full object-cover"
                 />
               </div>
             </div>
-            <div className="glass absolute -left-6 top-10 hidden rounded-2xl px-4 py-3 shadow-card sm:block">
-              <p className="font-mono text-xs text-muted-foreground">{"<code/>"}</p>
-              <p className="text-sm font-semibold">14+ Websites</p>
+
+            {/* Top-left badge: years */}
+            <div className="glass absolute -left-4 top-8 rounded-2xl px-4 py-3 shadow-card sm:-left-8">
+              <div className="flex items-center gap-3">
+                <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-primary text-primary-foreground">
+                  <Sparkles size={16} />
+                </span>
+                <div>
+                  <p className="font-display text-lg font-bold leading-none">14+</p>
+                  <p className="text-[10px] text-muted-foreground">Websites built</p>
+                </div>
+              </div>
             </div>
-            <div className="glass absolute -right-4 bottom-12 hidden rounded-2xl px-4 py-3 shadow-card sm:block">
-              <p className="text-xs text-muted-foreground">Specialty</p>
-              <p className="text-sm font-semibold text-gradient">WordPress + Wix</p>
+
+            {/* Code window snippet */}
+            <div className="glass absolute -right-3 top-1/3 hidden w-56 rounded-2xl p-3 shadow-card sm:block">
+              <div className="mb-2 flex items-center gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-destructive/70" />
+                <span className="h-2.5 w-2.5 rounded-full bg-accent" />
+                <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+                <span className="ml-2 font-mono text-[10px] text-muted-foreground">
+                  saniya.tsx
+                </span>
+              </div>
+              <pre className="font-mono text-[10.5px] leading-relaxed text-muted-foreground">
+{`const dev = {
+  name: "Saniya",
+  loves: `}<span className="text-primary">"clean UI"</span>{`,
+  ships: `}<span className="text-accent">true</span>{`,
+}`}
+              </pre>
             </div>
+
+            {/* Bottom-right badge: specialty */}
+            <div className="glass absolute -bottom-4 right-2 rounded-2xl px-4 py-3 shadow-card sm:right-6">
+              <p className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                Specialty
+              </p>
+              <p className="font-display text-sm font-bold text-gradient">
+                WordPress · Wix · React
+              </p>
+            </div>
+
+            {/* Floating dot accents */}
+            <span className="absolute -left-10 bottom-20 h-3 w-3 animate-pulse rounded-full bg-accent shadow-glow" />
+            <span className="absolute right-10 -top-6 h-2 w-2 animate-pulse rounded-full bg-primary" />
           </div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <a
+        href="#about"
+        className="group absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-muted-foreground transition hover:text-primary md:flex"
+      >
+        <span className="font-mono text-[10px] uppercase tracking-widest">Scroll</span>
+        <span className="grid h-9 w-5 place-items-start rounded-full border border-border p-1">
+          <span className="h-2 w-1 animate-bounce rounded-full bg-primary" />
+        </span>
+      </a>
     </section>
   );
 }
