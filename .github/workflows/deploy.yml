@@ -27,15 +27,10 @@ jobs:
       - name: Build
         run: bun run build
 
-      - name: Prepare Pages
-        run: |
-         mkdir -p .output/public
-         cp -r .output/* .output/public || true
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .output/public
+          path: .output
 
   deploy:
     needs: build
