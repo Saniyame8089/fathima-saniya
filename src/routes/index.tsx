@@ -1098,7 +1098,7 @@ function Footer() {
   return (
     <footer className="border-t border-border bg-card/40 py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 text-sm text-muted-foreground sm:flex-row">
-        <p>© {new Date().getFullYear()} Fathima Saniya M E. Crafted with care.</p>
+        <p>© {new Date().getFullYear()} Fathima Saniya M E.</p>
         <div className="flex items-center gap-4">
           <a href="https://github.com/Saniyame8089" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
             <Github size={16} />
