@@ -363,7 +363,7 @@ function Hero({ typing }: { typing: string }) {
             <a
               href="https://github.com/Saniyame8089"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="transition hover:-translate-y-0.5 hover:text-primary"
               aria-label="GitHub"
             >
@@ -372,7 +372,7 @@ function Hero({ typing }: { typing: string }) {
             <a
               href="https://www.linkedin.com/in/fathima-saniya-m-e/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="transition hover:-translate-y-0.5 hover:text-primary"
               aria-label="LinkedIn"
             >
@@ -1079,7 +1079,7 @@ function ContactCard({
     <a
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
-      rel="noreferrer"
+      rel="noopener noreferrer"
       className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-card transition hover:translate-y-[-2px] hover:border-primary hover:shadow-glow"
     >
       <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-primary text-primary-foreground">
@@ -1100,13 +1100,13 @@ function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 text-sm text-muted-foreground sm:flex-row">
         <p>© {new Date().getFullYear()} Fathima Saniya M E. Crafted with care.</p>
         <div className="flex items-center gap-4">
-          <a href="https://github.com/Saniyame8089" target="_blank" rel="noreferrer" className="hover:text-primary">
+          <a href="https://github.com/Saniyame8089" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
             <Github size={16} />
           </a>
           <a
             href="https://www.linkedin.com/in/fathima-saniya-m-e/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="hover:text-primary"
           >
             <Linkedin size={16} />
