@@ -189,49 +189,79 @@ function Nav({
   open: boolean;
   setOpen: (v: boolean) => void;
 }) {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-auto mt-3 max-w-6xl px-4">
-        <div className="glass flex items-center justify-between rounded-2xl px-4 py-3 shadow-card">
-          <a href="#home" className="flex items-center gap-2 font-display text-lg font-bold">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-primary text-primary-foreground shadow-glow">
-              S
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "pt-2" : "pt-3 sm:pt-4"
+      }`}
+    >
+      <div className="mx-auto max-w-6xl px-4">
+        <div
+          className={`flex items-center justify-between rounded-2xl border border-border/40 bg-background/60 px-4 py-2.5 backdrop-blur-xl transition-all duration-500 ${
+            scrolled
+              ? "shadow-elegant border-border/60 bg-background/75"
+              : "shadow-card"
+          }`}
+        >
+          <a
+            href="#home"
+            className="group flex items-center gap-2.5 font-display text-lg font-bold"
+          >
+            <span className="relative grid h-9 w-9 place-items-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow ring-1 ring-primary/30 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3">
+              <span className="font-display text-base font-bold tracking-tight">S</span>
+              <span className="absolute -bottom-0.5 -right-0.5 h-2 w-2 rounded-full bg-secondary ring-2 ring-background" />
             </span>
-            <span className="text-gradient">Saniya.dev</span>
+            <span className="flex items-baseline leading-none">
+              <span className="text-gradient tracking-tight">Saniya</span>
+              <span className="text-muted-foreground/80 font-mono text-sm">.dev</span>
+            </span>
           </a>
-          <nav className="hidden items-center gap-1 md:flex">
+
+          <nav className="hidden items-center gap-0.5 rounded-full border border-border/40 bg-background/40 px-1.5 py-1 backdrop-blur lg:flex">
             {NAV.map((n) => (
               <a
                 key={n.id}
                 href={`#${n.id}`}
-                className={`rounded-lg px-3 py-1.5 text-sm font-medium transition ${
+                className={`relative rounded-full px-3.5 py-1.5 text-sm font-medium transition-all duration-300 ${
                   active === n.id
-                    ? "bg-primary/10 text-primary"
+                    ? "text-primary-foreground"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
+                {active === n.id && (
+                  <span className="absolute inset-0 -z-10 rounded-full bg-gradient-rose-gold shadow-glow animate-scale-in" />
+                )}
                 {n.label}
               </a>
             ))}
           </nav>
+
           <div className="flex items-center gap-2">
             <button
               onClick={toggle}
               aria-label="Toggle theme"
-              className="grid h-9 w-9 place-items-center rounded-lg border border-border bg-background/50 transition hover:bg-primary/10 hover:text-primary"
+              className="grid h-9 w-9 place-items-center rounded-full border border-border/50 bg-background/50 transition-all duration-300 hover:scale-105 hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
             >
               {dark ? <Sun size={16} /> : <Moon size={16} />}
             </button>
             <a
-              href="/resume.pdf"
-              download
-              className="hidden items-center gap-2 rounded-full bg-gradient-rose-gold px-4 py-2 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-90 md:inline-flex"
+              href="#contact"
+              className="group relative hidden items-center gap-2 overflow-hidden rounded-full bg-gradient-rose-gold px-5 py-2 text-sm font-semibold text-primary-foreground shadow-glow ring-1 ring-primary/30 transition-all duration-300 hover:scale-[1.03] hover:shadow-elegant md:inline-flex"
             >
-              <Download size={14} /> Resume
+              <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-700 group-hover:translate-x-full" />
+              <Sparkles size={14} className="relative" />
+              <span className="relative">Hire Me</span>
             </a>
             <button
               onClick={() => setOpen(!open)}
-              className="grid h-9 w-9 place-items-center rounded-lg border border-border md:hidden"
+              className="grid h-9 w-9 place-items-center rounded-full border border-border/50 bg-background/50 transition hover:border-primary/40 hover:text-primary lg:hidden"
               aria-label="Menu"
             >
               {open ? <X size={16} /> : <Menu size={16} />}
@@ -239,17 +269,28 @@ function Nav({
           </div>
         </div>
         {open && (
-          <div className="glass mt-2 flex flex-col gap-1 rounded-2xl p-3 md:hidden">
+          <div className="mt-2 flex flex-col gap-1 rounded-2xl border border-border/40 bg-background/75 p-3 shadow-elegant backdrop-blur-xl animate-fade-in lg:hidden">
             {NAV.map((n) => (
               <a
                 key={n.id}
                 href={`#${n.id}`}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-primary/10 hover:text-primary"
+                className={`rounded-xl px-3 py-2 text-sm font-medium transition ${
+                  active === n.id
+                    ? "bg-gradient-rose-gold text-primary-foreground shadow-glow"
+                    : "hover:bg-primary/10 hover:text-primary"
+                }`}
               >
                 {n.label}
               </a>
             ))}
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-rose-gold px-3 py-2 text-sm font-semibold text-primary-foreground shadow-glow"
+            >
+              <Sparkles size={14} /> Hire Me
+            </a>
           </div>
         )}
       </div>
