@@ -511,7 +511,7 @@ function About() {
               <p className="text-base leading-relaxed text-foreground/90">
                 I am a passionate Web Developer with experience in designing and developing
                 modern, responsive, and user-friendly websites. I specialize in{" "}
-                <span className="font-semibold text-primary">WordPress, Wix, Shopify</span>, and
+                <span className="font-semibold text-primary">Wix, Shopify</span>, and
                 front-end web solutions, with hands-on experience working on multiple real-time
                 projects.
               </p>
