@@ -26,6 +26,16 @@ import {
 } from "lucide-react";
 import { toast, Toaster } from "sonner";
 import saniyaPhoto from "@/assets/saniya-profile.jpg";
+import mobifixImg from "@/assets/projects/mobifix.png";
+import coorgHolidaysImg from "@/assets/projects/coorg-holidays.png";
+import boomyImg from "@/assets/projects/boomy.png";
+import coorgGreenViewImg from "@/assets/projects/coorg-green-view.png";
+import coorgDreamLandImg from "@/assets/projects/coorg-dream-land.png";
+import futurbrixImg from "@/assets/projects/futurbrix.png";
+import spicesHutImg from "@/assets/projects/spices-hut.png";
+import hiqImg from "@/assets/projects/hiq.png";
+import justStayHomeImg from "@/assets/projects/just-stay-home.png";
+import mistyRiverImg from "@/assets/projects/misty-river.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
