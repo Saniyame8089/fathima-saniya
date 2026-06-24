@@ -342,8 +342,8 @@ function Hero({ typing }: { typing: string }) {
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="/resume.pdf"
-              download
+              href={resumeAsset.url}
+              download="FATHIMA_SANIYA_Resume.pdf"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-rose-gold px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:translate-y-[-2px]"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
