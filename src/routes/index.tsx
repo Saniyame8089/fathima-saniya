@@ -488,7 +488,7 @@ function About() {
                 technologies, improve my skills, and build impactful web solutions.
               </p>
               <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-                <Stat value="17+" label="Projects" />
+                <Stat value="14+" label="Projects" />
                 <Stat value="4+" label="Certifications" />
                 <Stat value="100%" label="Dedication" />
               </div>
