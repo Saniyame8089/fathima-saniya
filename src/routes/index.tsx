@@ -1008,12 +1008,6 @@ function Contact() {
               href="mailto:saniyamefathima@gmail.com"
             />
             <ContactCard
-              icon={<Phone size={18} />}
-              label="Phone"
-              value="+91 9380226534"
-              href="tel:+919380226534"
-            />
-            <ContactCard
               icon={<Linkedin size={18} />}
               label="LinkedIn"
               value="fathima-saniya-m-e"
