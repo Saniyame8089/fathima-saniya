@@ -510,9 +510,9 @@ function About() {
           <div className="reveal lg:col-span-3">
             <div className="glass rounded-2xl p-8 shadow-card">
               <p className="text-base leading-relaxed text-foreground/90">
-                I am a passionate Web Developer with experience in designing and developing
+                I am a passionate Web Developer and Software Engineer with experience in designing and developing
                 modern, responsive, and user-friendly websites. I specialize in{" "}
-                <span className="font-semibold text-primary">Wordpress, Wix, Shopify</span>, and
+                <span className="font-semibold text-primary">Wordpress, Wix, QA</span> and
                 front-end web solutions, with hands-on experience working on multiple real-time
                 projects.
               </p>
@@ -581,7 +581,7 @@ const CERTS = [
   {
     title: "Certified Python Course",
     org: "Jumpwhere",
-    period: "Jan 2025 – May 2025",
+    period: "Jan 2025 – Mar 2025",
     desc: "Python fundamentals, data structures, OOP concepts, and automation basics.",
   },
   {
