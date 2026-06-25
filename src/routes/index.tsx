@@ -5,7 +5,6 @@ import {
   Github,
   Linkedin,
   Mail,
-  Phone,
   Download,
   ExternalLink,
   Moon,
