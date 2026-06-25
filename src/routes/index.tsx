@@ -581,7 +581,7 @@ const CERTS = [
   {
     title: "Certified Python Course",
     org: "Jumpwhere",
-    period: "Jan 2025 – May 2025",
+    period: "Jan 2025 – Mar 2025",
     desc: "Python fundamentals, data structures, OOP concepts, and automation basics.",
   },
   {
