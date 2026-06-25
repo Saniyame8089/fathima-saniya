@@ -320,7 +320,7 @@ function Hero({ typing }: { typing: string }) {
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href={resumeAsset.url}
+              href={resumeAsset}
               download="FATHIMA_SANIYA_Resume.pdf"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-rose-gold px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:translate-y-[-2px]"
             >
