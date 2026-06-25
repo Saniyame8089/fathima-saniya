@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
 import {
@@ -38,27 +37,6 @@ import hiqImg from "@/assets/projects/hiq.png";
 import justStayHomeImg from "@/assets/projects/just-stay-home.png";
 import mistyRiverImg from "@/assets/projects/misty-river.png";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Fathima Saniya M E — Web Developer Portfolio" },
-      {
-        name: "description",
-        content:
-          "Portfolio of Fathima Saniya M E — Web Developer specializing in WordPress, Wix and modern frontend. Explore projects, skills, and experience.",
-      },
-      { property: "og:title", content: "Fathima Saniya M E — Web Developer" },
-      {
-        property: "og:description",
-        content:
-          "Passionate Web Developer creating modern, responsive, and user-friendly digital experiences.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Portfolio,
-});
 
 const NAV = [
   { id: "home", label: "Home" },
@@ -1133,3 +1111,5 @@ function Footer() {
     </footer>
   );
 }
+
+export default Portfolio;
