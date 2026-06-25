@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 import { toast, Toaster } from "sonner";
 import saniyaPhoto from "@/assets/saniya-profile.jpg";
-const resumeAsset = "/fathima-saniya/FATHIMA_SANIYA%20Resume.pdf";
+const resumeAsset = `${import.meta.env.BASE_URL}FATHIMA_SANIYA_Resume.pdf`;
 import mobifixImg from "@/assets/projects/mobifix.png";
 import coorgHolidaysImg from "@/assets/projects/coorg-holidays.png";
 import boomyImg from "@/assets/projects/boomy.png";
