@@ -49,10 +49,10 @@ const NAV = [
 ];
 
 const TYPING_PHRASES = [
-  "Web Developer",
-  "WordPress Developer",
+  "Software Engineer",
   "Frontend Developer",
-  "Wordpress, Wix Specialist",
+  "Web Developer",
+  "React Developer",
 ];
 
 function useTheme() {
@@ -288,9 +288,6 @@ function Hero({ typing }: { typing: string }) {
             </span>
             Available for freelance &amp; full-time roles
           </div>
-          <p className="mb-3 font-mono text-sm text-muted-foreground">
-            <span className="text-accent">$</span> whoami
-          </p>
           <h1 className="font-display text-4xl font-bold leading-[1.05] sm:text-5xl md:text-[3.75rem]">
             <span className="block text-foreground/80">Hi, I'm</span>
             <span className="text-gradient">Fathima Saniya</span>
@@ -298,15 +295,14 @@ function Hero({ typing }: { typing: string }) {
           </h1>
           <p className="mt-5 flex flex-wrap items-baseline gap-2 font-mono text-base text-muted-foreground sm:text-lg">
             <span className="text-primary">{">"}</span>
-            <span className="text-foreground">I build </span>
             <span className="rounded-md bg-primary/10 px-2 py-0.5 text-primary caret">
               {typing}
             </span>
           </p>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Crafting <span className="text-foreground">modern, responsive</span> and
-            user-friendly digital experiences with WordPress, Wix and modern frontend
-            technologies — turning ideas into pixel-perfect websites.
+            <span className="text-foreground">Software Engineer</span> with nearly one year of
+            experience building responsive, user-friendly web applications and business websites
+            using React, JavaScript, HTML, CSS, WordPress, and Wix.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {stack.map((s) => (
@@ -488,11 +484,11 @@ function About() {
           <div className="reveal lg:col-span-3">
             <div className="glass rounded-2xl p-8 shadow-card">
               <p className="text-base leading-relaxed text-foreground/90">
-                I am a passionate Web Developer and Software Engineer with experience in designing and developing
-                modern, responsive, and user-friendly websites. I specialize in{" "}
-                <span className="font-semibold text-primary">Wordpress, Wix, QA</span> and
-                front-end web solutions, with hands-on experience working on multiple real-time
-                projects.
+                Software Engineer with nearly one year of experience building responsive,
+                user-friendly web applications and business websites. Skilled in{" "}
+                <span className="font-semibold text-primary">React, JavaScript, HTML, CSS</span>,
+                with additional hands-on experience in WordPress and Wix — focused on clean UI,
+                performance, and modern frontend development.
               </p>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 I enjoy transforming ideas into creative digital experiences by focusing on clean
