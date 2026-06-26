@@ -271,7 +271,7 @@ function Nav({
 
 /* ----------------------------- HERO ----------------------------- */
 function Hero({ typing }: { typing: string }) {
-  const stack = ["Wordpress, Wix", "React", "JavaScript", "HTML/CSS", "UI, Software Development"];
+  const stack = ["React", "JavaScript", "TypeScript", "HTML/CSS", "WordPress", "Wix"];
   return (
     <section
       id="home"
@@ -653,13 +653,13 @@ const SKILL_GROUPS: { title: string; icon: React.ReactNode; items: { name: strin
     title: "Technical Skills",
     icon: <Code2 size={18} />,
     items: [
+      { name: "React", level: 85 },
+      { name: "JavaScript", level: 85 },
       { name: "HTML", level: 95 },
-      { name: "CSS", level: 90 },
-      { name: "JavaScript", level: 80 },
-      { name: "React", level: 75 },
-      { name: "Wordpress, Wix", level: 92 },
-      { name: "Python (Basics)", level: 65 },
-      { name: "Java (Basics)", level: 60 },
+      { name: "CSS / Tailwind", level: 90 },
+      { name: "TypeScript (Basics)", level: 65 },
+      { name: "WordPress", level: 85 },
+      { name: "Wix", level: 85 },
     ],
   },
   {
