@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 import { toast, Toaster } from "sonner";
 import saniyaPhoto from "@/assets/saniya-profile.jpg";
-const resumeAsset = `${import.meta.env.BASE_URL}FATHIMA_SANIYA_Resume.pdf`;
+const resumeAsset = `${import.meta.env.BASE_URL}FATHIMA_SANIYA_M_E_Resume.pdf`;
 import mobifixImg from "@/assets/projects/mobifix.png";
 import coorgHolidaysImg from "@/assets/projects/coorg-holidays.png";
 import boomyImg from "@/assets/projects/boomy.png";
@@ -317,7 +317,7 @@ function Hero({ typing }: { typing: string }) {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={resumeAsset}
-              download="FATHIMA_SANIYA_Resume.pdf"
+              download="FATHIMA_SANIYA_M_E_Resume.pdf"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-rose-gold px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition hover:translate-y-[-2px]"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
