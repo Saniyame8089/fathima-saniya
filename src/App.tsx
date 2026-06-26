@@ -402,10 +402,7 @@ function Hero({ typing }: { typing: string }) {
                 Specialty
               </p>
               <p className="font-display text-sm font-bold text-gradient">
-                Software Engineer
-              </p>
-              <p className="font-display text-sm font-bold text-gradient">
-                Web Development
+                WordPress · Wix · React
               </p>
             </div>
 
